@@ -1,0 +1,99 @@
+Hacker Rank Solution # 2  - IfElse
+
+Question
+ask Given an integer, , perform the following conditional actions:
+
+If  is odd, print Weird
+If  is even and in the inclusive range of  to , print Not Weird
+If  is even and in the inclusive range of  to , print Weird
+If  is even and greater than , print Not Weird
+Input Format
+
+A single line containing a positive integer, .
+
+Constraints
+
+Output Format
+
+Print Weird if the number is weird. Otherwise, print Not Weird.
+
+Sample Input 0
+
+3
+Sample Output 0
+
+Weird
+Explanation 0
+
+
+ is odd and odd numbers are weird, so print Weird.
+
+Sample Input 1
+
+24
+Sample Output 1
+
+Not Weird
+Explanation 1
+
+
+ and  is even, so it is not weird.
+
+
+Solution
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def test (n):
+    if n % 2 != 0: 
+        print("Weird")
+    elif (n % 2 == 0) and (2 <= n <= 5):
+        print("Not Weird")
+    elif (n % 2 == 0) and (6 <= n <= 20):
+        print("Weird")
+    elif (n % 2 == 0) and (n > 20):
+        print("Not Weird")
+    
+if __name__ == '__main__':
+    n = int(input().strip())
+    test(n)
+
+Analysis 
+
+1. Odd Number Check:
+
+if n % 2 != 0:
+This line checks if the remainder of n divided by 2 is not equal to 0.
+If true, it means n is an odd number.
+The code block following this condition prints "Weird".
+
+2. Even Number Checks:
+
+elif (n % 2 == 0) and (2 <= n <= 5):
+
+This line checks two conditions using and:
+n % 2 == 0: n is even (divisible by 2).
+2 <= n <= 5: n is within the range of 2 to 5 (inclusive).
+If both conditions are true, it prints "Not Weird".
+elif (n % 2 == 0) and (6 <= n <= 20):
+
+This line checks if n is even and within the range of 6 to 20 (inclusive).
+If true, it prints "Weird".
+elif (n % 2 == 0) and (n > 20):
+
+This line checks if n is even and greater than 20.
+If true, it prints "Not Weird".
+
+Key Points
+
+The elif statements are used to check additional conditions only if the previous if or elif conditions were false.
+The and operator is used to combine multiple conditions, both of which must be true for the overall condition to be true.
+The modulo operator (%) is used to find the remainder of a division operation.
+By using these conditional checks, the code effectively categorizes the input number based on the given rules and prints the appropriate output.
+
